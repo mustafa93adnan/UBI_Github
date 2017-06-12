@@ -1,0 +1,17 @@
+TB_mothes
+
+SELECT M_ID, Month_Date, N_ID, No_Wasel, Received_Money FROM TB_Months WHERE (N_ID = ?)
+
+
+
+SELECT        TB_Name.Full_Name, TB_Name.Date_Birthday, TB_Name.User_BarCode, TB_Months.Month_Date, TB_Months.Received_Money, TB_Months.No_Wasel
+FROM            (TB_Months INNER JOIN
+                         TB_Name ON TB_Months.N_ID = TB_Name.N_ID)
+WHERE        (TB_Name.Full_Name LIKE ? + '%')
+
+
+
+
+
+
+SELECT Full_Name, Date_Birthday, User_BarCode, N_ID, Address FROM TB_Name WHERE (Full_Name LIKE ? + '%') OR (User_BarCode = ?)
